@@ -1,31 +1,11 @@
-import * as React from 'react';
+import React from 'react'
+import { AsyncJsonFileStorage } from '@aeroxmotion/react-native-async-json-file-storage'
 
-import { StyleSheet, View, Text } from 'react-native';
-import ReactNativeAsyncJsonFileStorage from '@aeroxmotion/react-native-async-json-file-storage';
+const storage = new AsyncJsonFileStorage('test-json-file-storage')
 
+storage.getAllKeys()
+
+// TODO
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    ReactNativeAsyncJsonFileStorage.multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+  return <></>
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

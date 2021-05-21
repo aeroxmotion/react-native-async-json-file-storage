@@ -1,13 +1,14 @@
-const path = require('path');
-const blacklist = require('metro-config/src/defaults/blacklist');
-const escape = require('escape-string-regexp');
-const pak = require('../package.json');
+const path = require('path')
+const blacklist = require('metro-config/src/defaults/blacklist')
+const escape = require('escape-string-regexp')
 
-const root = path.resolve(__dirname, '..');
+const pak = require('../package.json')
+
+const root = path.resolve(__dirname, '..')
 
 const modules = Object.keys({
-  ...pak.peerDependencies,
-});
+  ...pak.peerDependencies
+})
 
 module.exports = {
   projectRoot: __dirname,
@@ -24,17 +25,17 @@ module.exports = {
     ),
 
     extraNodeModules: modules.reduce((acc, name) => {
-      acc[name] = path.join(__dirname, 'node_modules', name);
-      return acc;
-    }, {}),
+      acc[name] = path.join(__dirname, 'node_modules', name)
+      return acc
+    }, {})
   },
 
   transformer: {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
-      },
-    }),
-  },
-};
+        inlineRequires: true
+      }
+    })
+  }
+}

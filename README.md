@@ -1,4 +1,4 @@
-# @aeroxmotion/react-native-async-json-file-storage
+# AsyncJsonFileStorage for React Native
 
 Asynchronous JSON file storage
 
@@ -11,11 +11,11 @@ npm install @aeroxmotion/react-native-async-json-file-storage
 ## Usage
 
 ```js
-import ReactNativeAsyncJsonFileStorage from "@aeroxmotion/react-native-async-json-file-storage";
+import AsyncJsonFileStorage from '@aeroxmotion/react-native-async-json-file-storage'
 
 // ...
 
-const result = await ReactNativeAsyncJsonFileStorage.multiply(3, 7);
+const result = await AsyncJsonFileStorage.multiply(3, 7)
 ```
 
 ## Contributing
